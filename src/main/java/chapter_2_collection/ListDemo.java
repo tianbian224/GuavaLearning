@@ -1,7 +1,5 @@
-package GuavaDemo;
+package chapter_2_collection;
 
-import chapter_1_basic_tools.testModel.Person;
-import com.google.common.base.Function;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Ordering;
 import org.junit.Test;

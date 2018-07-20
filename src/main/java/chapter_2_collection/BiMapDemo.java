@@ -15,7 +15,5 @@ public class BiMapDemo {
         m.put("b", 98);
         System.out.println(m);
         System.out.println(m.inverse());// 翻转键值映射
-
-
     }
 }
