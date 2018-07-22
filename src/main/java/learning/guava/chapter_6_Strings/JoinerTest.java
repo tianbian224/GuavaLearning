@@ -10,25 +10,32 @@ import java.util.Map;
 
 /**
  * joiner 用于连接元素
+ * @author cang.lv
  */
-public class joinerDemo {
+public class JoinerTest
+{
 
     @Test
-    public void test1() {
+    public void test1()
+    {
         List<Integer> list = Lists.newArrayList(1, 2, 3, 4);
-        System.out.println(Joiner.on("-").join(list));//使用-连接 ,有null 会抛出异常
+        //使用-连接 ,有null 会抛出异常
+        System.out.println(Joiner.on("-").join(list));
 
 
         List<Integer> list2 = Lists.newArrayList(1, 2, 3, null, 4);
-        System.out.println(Joiner.on("-").skipNulls().join(list2));//使用-连接,但是忽略null值
+        //使用-连接,但是忽略null值
+        System.out.println(Joiner.on("-").skipNulls().join(list2));
 
         List<Integer> list3 = Lists.newArrayList(1, 2, null, 3, 4);
-        System.out.println(Joiner.on("-").useForNull("6").join(list3));//使用-连接,将null替换为6
+        //使用-连接,将null替换为6
+        System.out.println(Joiner.on("-").useForNull("6").join(list3));
 
         Map<String, String> map = Maps.newHashMap();
         map.put("name", "lvcang");
         map.put("gender", "male");
-        System.out.println(Joiner.on("&").withKeyValueSeparator("=").join(map));// map的价和值使用=连接，键值对使用&连接
+        // map的价和值使用=连接，键值对使用&连接
+        System.out.println(Joiner.on("&").withKeyValueSeparator("=").join(map));
 
     }
 }
